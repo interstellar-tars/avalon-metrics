@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         // Fetch metrics from the Cloudflare Workers API
-        const response = await fetch("https://avalon-metrics.cubiodojo.workers.dev/api/metrics");
+        const response = await fetch("https://your-cloudflare-worker-url/api/metrics");
         if (!response.ok) {
             throw new Error("Failed to fetch data");
         }
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const metrics = await response.json();
 
         // Prepare data for Chart.js
-        const labels = metrics.map(item => item.model_id);
+        const labels = metrics.map(item => item.model_name); // Use human-readable names
         const dataCounts = metrics.map(item => item.count);
 
         // Create a bar chart
