@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         // Fetch metrics from the Cloudflare Workers API
-        const response = await fetch("https://your-cloudflare-worker-url/api/metrics");
+        const response = await fetch("https://avalon-metrics.cubiodojo.workers.dev/api/metrics");
         if (!response.ok) {
             throw new Error("Failed to fetch data");
         }
